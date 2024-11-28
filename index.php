@@ -22,7 +22,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <?php include('includes/header.php'); ?> <!-- En-tête du site -->
 
     <div class="container">
-        <h2>Bienvenue sur le Planificateur de Fêtes</h2>
+        <h2>Bienvenue sur le Planificateur de Fêtess</h2>
 
         <div class="form_container">
             <h3>Connecte-toi</h3>
