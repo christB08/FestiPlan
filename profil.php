@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profile_image"])) {
 }
 
 $user_id = $_SESSION["id"];
-$sql = "SELECT pseudo, first_name, last_name, email, image FROM users WHERE id = :id";
+$sql = "SELECT user.pseudo, first_name, last_name, email, image FROM users WHERE id = :id";
 if ($stmt = $pdo->prepare($sql)) {
     $stmt->bindParam(":id", $user_id, PDO::PARAM_INT);
 
     if ($stmt->execute()) {
         if ($stmt->rowCount() == 1) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $user_pseudo = $row["pseudo"];
+            $user_pseudo = $row["user.pseudo"];
             $user_first_name = $row["first_name"];
             $user_last_name = $row["last_name"];
             $user_email = $row["email"];
